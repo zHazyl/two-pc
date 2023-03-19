@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    # Change DESKTOP-F879KH9 to your SQL server name
+    url: jdbc:sqlserver://DESKTOP-F879KH9;encrypt=true;trustServerCertificate=true;databaseName=User
+    username: sa
+    password: 1
+
+server:
+  port: 8082

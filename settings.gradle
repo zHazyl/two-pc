@@ -1,0 +1,4 @@
+rootProject.name = 'two-pc'
+include 'jpa-flyway-example'
+include 'two-phase-commit'
+include 'two-phase-commit-1'

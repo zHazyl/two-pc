@@ -1,0 +1,10 @@
+CREATE TABLE user1 (
+     id BIGINT PRIMARY KEY,
+     total NUMERIC NOT NULL
+);
+
+INSERT INTO user1(id, total)
+VALUES (1, 2000000);
+
+INSERT INTO user1(id, total)
+VALUES (2, 20000)
