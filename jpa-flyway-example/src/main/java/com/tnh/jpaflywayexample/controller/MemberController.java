@@ -9,7 +9,7 @@ import java.util.List;
 // Build API
 @RestController
 @RequestMapping("/api/v1/members")
-// example : http://localhost:8080/api/v1/members is listened by this controller
+// example : http://localhost:8081/api/v1/members is listened by this controller
 public class MemberController {
 
     // Dependency injection - should read this

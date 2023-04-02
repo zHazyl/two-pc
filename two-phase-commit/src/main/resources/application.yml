@@ -1,9 +1,9 @@
 spring:
   datasource:
     # Change DESKTOP-F879KH9 to your SQL server name
-    url: jdbc:sqlserver://DESKTOP-F879KH9;encrypt=true;trustServerCertificate=true;databaseName=User
-    username: sa
-    password: 1
+    url: jdbc:sqlserver://hn.database.windows.net:1433;database=authdb;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: hazy@hn
+    password: @h0917815161
 
 server:
   port: 8082
