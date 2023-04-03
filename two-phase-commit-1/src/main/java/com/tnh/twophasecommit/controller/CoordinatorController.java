@@ -2,10 +2,7 @@ package com.tnh.twophasecommit.controller;
 
 import com.tnh.twophasecommit.domain.Payment;
 import com.tnh.twophasecommit.service.CoordinatorService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -20,5 +17,10 @@ public class CoordinatorController {
     @PostMapping
     public Payment pay(@RequestBody Payment payment) throws IOException, InterruptedException, ExecutionException {
         return coordinatorService.pay(payment);
+    }
+
+    @PostMapping("/debug/{isDebug}")
+    public void debug(@PathVariable boolean isDebug) {
+        coordinatorService.debug(isDebug);
     }
 }

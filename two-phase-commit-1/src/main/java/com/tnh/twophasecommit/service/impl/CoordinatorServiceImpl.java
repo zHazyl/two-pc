@@ -23,6 +23,8 @@ import java.util.concurrent.Future;
 @Slf4j
 public class CoordinatorServiceImpl implements CoordinatorService {
 
+    private static boolean debug = false;
+
     @Override
     public Payment pay(Payment payment) throws IOException, InterruptedException, ExecutionException {
         Map<String, String> data = new HashMap<>();
@@ -45,8 +47,12 @@ public class CoordinatorServiceImpl implements CoordinatorService {
 
         Future<Boolean> voteUser = threadpool.submit(() -> voteUser(requestBody));
 
-        while (!(votePayment.isDone() && voteUser.isDone())) {
-            log.info("still vote");
+        while (!(votePayment.isDone() && voteUser.isDone()) || debug == true) {
+            String isDebug = "";
+            if (debug) {
+                isDebug = "Debug: ";
+            }
+            log.info(isDebug + "voting");
         }
         log.info(votePayment.get().toString());
         log.info(voteUser.get().toString());
@@ -128,5 +134,10 @@ public class CoordinatorServiceImpl implements CoordinatorService {
         log.info(response.body());
 
         return Boolean.parseBoolean(response.body());
+    }
+
+    public void debug(boolean isDebug) {
+        debug = isDebug;
+        log.info(String.valueOf(debug));
     }
 }

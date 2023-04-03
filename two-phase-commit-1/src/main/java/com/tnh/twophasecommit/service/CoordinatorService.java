@@ -8,4 +8,5 @@ import java.util.concurrent.ExecutionException;
 
 public interface CoordinatorService {
     Payment pay(Payment payment) throws IOException, InterruptedException, ExecutionException;
+    void debug(boolean isDebug);
 }
