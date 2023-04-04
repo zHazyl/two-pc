@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -68,5 +69,9 @@ public class UserService {
 
     public User getUser(Long id) {
         return userRepository.getById(id);
+    }
+
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 }

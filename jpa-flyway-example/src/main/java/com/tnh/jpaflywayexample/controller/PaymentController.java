@@ -4,6 +4,8 @@ import com.tnh.jpaflywayexample.domain.Payment;
 import com.tnh.jpaflywayexample.service.PaymentService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
@@ -32,6 +34,11 @@ public class PaymentController {
     @GetMapping("/{id}")
     public Payment getPayment(@PathVariable Long id) {
         return paymentService.getPayment(id);
+    }
+
+    @GetMapping
+    public List<Payment> getAllPayment() {
+        return paymentService.getAllPayment();
     }
 
 }

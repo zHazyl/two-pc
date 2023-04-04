@@ -5,6 +5,8 @@ import com.tnh.twophasecommit.domain.User;
 import com.tnh.twophasecommit.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -33,6 +35,11 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
+    }
+
+    @GetMapping
+    public List<User> getAllUser() {
+        return userService.getAllUser();
     }
 
 }

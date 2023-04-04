@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -75,5 +76,10 @@ public class PaymentImpl implements PaymentService {
     @Override
     public Payment getPayment(Long id) {
         return paymentRepository.getById(id);
+    }
+
+    @Override
+    public List<Payment> getAllPayment() {
+        return paymentRepository.findAll();
     }
 }
